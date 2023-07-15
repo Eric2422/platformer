@@ -1,2 +1,1 @@
-# platformer
- A platformer game made with Phaser
+A platformer game made with Phaser
