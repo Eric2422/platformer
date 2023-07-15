@@ -1,0 +1,9 @@
+{
+  "xAcceleration": 0.5,
+  "maxXSpeed": 4,
+  "jumpSpeed": -7,
+  "width": 26,
+  "height": 60,
+  "color": "#1c1",
+  "spriteFilePath": "./sprites/player0.png"
+}

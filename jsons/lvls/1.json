@@ -1,0 +1,19 @@
+{
+    "background": "./sprites/limestone_wall.png",
+
+    "playerSpawnPoint": [50, 400],
+
+    "obstacles": [
+        {
+            "x": 20, 
+            "y": 450, 
+            "spriteFilePath": "./sprites/rock.png",
+            "friction": 0.25
+        }
+    ],
+    "door": {
+        "x": 1570, 
+        "y": 100,  
+        "spriteFilePath": "./sprites/rock.png"
+    }
+}
