@@ -2,8 +2,8 @@ class TestScene extends Phaser.Scene {
     preload() {
         this.load.setBaseURL('http://127.0.0.1:5500/');
 
-        this.load.image('player', './sprites/player0.png');
-        this.load.image('limestone_wall', './sprites/limestone_wall.png');
+        this.load.image('player', './assets/png/player0.png');
+        this.load.image('limestone_wall', './assets/png/limestone_wall.png');
 
         // create listeners for the WASD keys
         this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
@@ -32,7 +32,7 @@ class TestScene extends Phaser.Scene {
         // create 16 limestone blocks
         this.obstacles = [];
 
-        for (let i=0; i<16; i++) {
+        for (let i = 0; i < 16; i++) {
             // create a block of limestone
             this.obstacles.push(this.physics.add.image(400 + (i * 64), 250 - (i * 0), 'limestone_wall'));
 
@@ -53,18 +53,21 @@ class TestScene extends Phaser.Scene {
         // moves based on the keys pressed
         // opposing keys are mutually exclusive
         // but one x key and one y key is valid
-        if (this.keyW.isDown) {
-            this.player.setVelocityY(-100);
+
+        // if w is pressed and the player is on something,
+        // jump
+        if (this.keyW.isDown && this.player.body.touching.down) {
+            this.player.body.velocity.y -= 200;
 
         } else if (this.keyS.isDown) {
-            this.player.setVelocityY(100);
-        } 
-        
+            this.player.body.velocity.y += 10;
+        }
+
         if (this.keyA.isDown) {
-            this.player.setVelocityX(-100);
+            this.player.body.velocity.x -= 10;
 
         } else if (this.keyD.isDown) {
-            this.player.setVelocityX(100);
+            this.player.body.velocity.x += 10;
         }
     }
 }
