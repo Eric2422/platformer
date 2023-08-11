@@ -1,0 +1,19 @@
+{
+    "background": "foreground/limestone",
+    "playerSpawnPoint": [
+        50,
+        400
+    ],
+    "obstacles": [
+        {
+            "x": 20,
+            "y": 450,
+            "sprite": "foreground/limestone"
+        }
+    ],
+    "door": {
+        "x": 1570,
+        "y": 100,
+        "sprite": "foreground/limestone"
+    }
+}

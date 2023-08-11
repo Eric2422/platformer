@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "mime": "^3.0.0",
-    "nodemon": "^3.0.1"
-  }
-}

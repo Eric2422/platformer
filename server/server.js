@@ -16,9 +16,13 @@ function getContentType(url) {
 }
 
 const server = http.createServer((req, res) => {
+    console.log(`File path: ${getFilePath(req.url)}`);
+    console.log(`Content type: ${getContentType(req.url)}\n`);
+
     fs.readFile(
         getFilePath(req.url),
-        (err, data) => {
+        (err, data) => {        
+            // write the response header
             res.writeHead(200, { 'Content-Type': getContentType(req.url) });
 
             // write the data in the file
