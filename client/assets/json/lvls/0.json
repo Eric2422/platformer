@@ -1,5 +1,5 @@
 {
-    "background": "foreground/limestone",
+    "background": "sprites/foreground/limestone.png",
     "playerSpawnPoint": [
         50,
         400
@@ -8,12 +8,12 @@
         {
             "x": 20,
             "y": 450,
-            "sprite": "foreground/limestone"
+            "sprite": "sprites/foreground/limestone.png"
         }
     ],
     "door": {
         "x": 1570,
         "y": 100,
-        "sprite": "foreground/limestone"
+        "sprite": "sprites/foreground/limestone.png"
     }
 }

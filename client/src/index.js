@@ -1,5 +1,5 @@
 import { Platform } from './gameObjects.js';
-import { Files } from './files.js';
+import { Requests } from './requests.js';
 
 class Level extends Phaser.Scene {
     // pass in the parsed JSONs of the level and player
@@ -17,11 +17,13 @@ class Level extends Phaser.Scene {
     }
 
     preload() {
-        this.load.setBaseURL('http://127.0.0.1:5500/sprites');
+        this.load.setBaseURL('http://127.0.0.1:8000/assets');
 
         this.imageFilePaths.forEach(ele => {
-            console.log(`${ele}.png`);
-            this.load.image(ele, `${ele}.png`);
+            this.load.image(
+                ele.slice(0, ele.lastIndexOf('.')),
+                ele
+            );
         }
         );
     }
@@ -82,8 +84,8 @@ class Level extends Phaser.Scene {
 }
 
 let newScene = new Level(
-    await Files.readJSON('./json/lvls/0.json'),
-    await Files.readJSON('./json/player.json')
+    await Requests.fetchFile('../assets/json/lvls/0.json'),
+    await Requests.fetchFile('../assets/json/player.json')
 );
 
 const config = {
