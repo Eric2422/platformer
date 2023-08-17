@@ -20,9 +20,6 @@ function getContentType(url) {
 
 // create a listener
 const server = http.createServer((req, res) => {
-    console.log(`File path: ${getFilePath(req.url)}`);
-    console.log(`Content type: ${getContentType(req.url)}\n`);
-
     fs.readFile(
         getFilePath(req.url),
         (err, data) => {

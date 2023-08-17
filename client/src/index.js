@@ -17,11 +17,16 @@ class Level extends Phaser.Scene {
     }
 
     preload() {
-        this.load.setBaseURL('http://127.0.0.1:8000/assets');
+        this.load.setBaseURL('http://127.0.0.1:8000/assets/sprites');
 
         this.imageFilePaths.forEach(ele => {
             this.load.image(
-                ele.slice(0, ele.lastIndexOf('.')),
+                // the name of the file
+                ele.slice(
+                    ele.lastIndexOf('/') + 1,
+                    ele.lastIndexOf('.')
+                ),
+                // relative file path
                 ele
             );
         }
@@ -84,8 +89,8 @@ class Level extends Phaser.Scene {
 }
 
 let newScene = new Level(
-    await Requests.fetchFile('../assets/json/lvls/0.json'),
-    await Requests.fetchFile('../assets/json/player.json')
+    await Requests.fetchJSON('assets/json/lvls/0.json'),
+    await Requests.fetchJSON('assets/json/player.json')
 );
 
 const config = {
