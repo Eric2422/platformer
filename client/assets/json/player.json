@@ -1,6 +1,7 @@
 {
-  "xAcceleration": 0.5,
-  "maxXSpeed": 2,
-  "jumpSpeed": -7,
-  "sprite": "player/player.png"
+  "xAcceleration": 7.5,
+  "maxXSpeed": 200,
+  "jumpVelocity": 700,
+  "terminalVelocity": 750,
+  "sprite": ".player/player.png"
 }
