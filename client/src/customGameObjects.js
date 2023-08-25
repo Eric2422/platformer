@@ -1,6 +1,8 @@
 class CustomImage extends Phaser.Physics.Arcade.Image {
     constructor(scene, x, y, sprite) {
         super(scene, x, y, sprite);
+        
+        //console.log(`Sprite parameter: ${sprite}`);
 
         // add it to the game
         scene.physics.add.existing(this);

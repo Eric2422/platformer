@@ -3,5 +3,5 @@
   "maxXSpeed": 200,
   "jumpVelocity": 700,
   "terminalVelocity": 750,
-  "sprite": ".player/player.png"
+  "sprite": "player/player.png"
 }

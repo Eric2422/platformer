@@ -31,8 +31,8 @@ const server = http.createServer((req, res) => {
         (err, data) => {
             // if and error occurs while reading the file
             if (err) {
-                console.log('An error has occured.');
-                throw err;
+                console.log('An error has occured:');
+                console.log(err);
             }
 
             // write the response header

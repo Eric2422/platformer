@@ -1,5 +1,5 @@
 {
-    "background": ".foreground/limestone.png",
+    "background": "foreground/limestone.png",
     "playerSpawnPoint": [
         100,
         400
@@ -8,107 +8,107 @@
         {
             "x": 32,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
             "x": 96,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
             "x": 160,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
             "x": 224,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 256,
+            "x": 288,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 320,
+            "x": 352,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 384,
+            "x": 416,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 448,
+            "x": 480,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 512,
+            "x": 544,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 576,
+            "x": 608,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 640,
+            "x": 672,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 704,
+            "x": 736,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 768,
+            "x": 800,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 832,
+            "x": 864,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 896,
+            "x": 928,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 960,
+            "x": 992,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 1024,
+            "x": 1056,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 1088,
+            "x": 1120,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 1152,
+            "x": 1184,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         },
         {
-            "x": 1214,
+            "x": 1248,
             "y": 450,
-            "sprite": ".foreground/limestone.png"
+            "sprite": "foreground/limestone.png"
         }
     ],
     "door": {
         "x": 1570,
         "y": 100,
-        "sprite": ".foreground/limestone.png"
+        "sprite": "foreground/limestone.png"
     }
 }
