@@ -1,114 +1,114 @@
 {
-    "background": "foreground/limestone.png",
+    "background": "foreground/obstacles/limestone.png",
     "playerSpawnPoint": [
         100,
         400
     ],
-    "platforms": [
+    "obstacles": [
         {
             "x": 32,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 96,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 160,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 224,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 288,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 352,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 416,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 480,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 544,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 608,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 672,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 736,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 800,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 864,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 928,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 992,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 1056,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 1120,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 1184,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         },
         {
             "x": 1248,
             "y": 450,
-            "sprite": "foreground/limestone.png"
+            "sprite": "foreground/obstacles/limestone.png"
         }
     ],
     "door": {
         "x": 1570,
         "y": 100,
-        "sprite": "foreground/limestone.png"
+        "sprite": "foreground/obstacles/limestone.png"
     }
 }

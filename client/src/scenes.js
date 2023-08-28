@@ -1,4 +1,4 @@
-import { Platform, Player } from './customGameObjects.js';
+import { Obstacle, Player } from './customGameObjects.js';
 
 class Level extends Phaser.Scene {
     constructor() {
@@ -44,7 +44,7 @@ class Level extends Phaser.Scene {
                 sprites.push(this.playerData.sprite);
     
                 // add the sprite for each obstacle to sprites
-                this.levelData.platforms.forEach(
+                this.levelData.obstacles.forEach(
                     ele => {
                         if (!sprites.includes(ele.sprite)) {
                             sprites.push(ele.sprite);
@@ -77,26 +77,23 @@ class Level extends Phaser.Scene {
             this.playerData
         );
 
-        // array to track the platformers
-        this.platforms = [];
+        // array to track the obstacles
+        this.obstacles = [];
 
         // create each obstacle in the json
-        for (let platform of this.levelData.platforms) {
-
-            //console.log(platform.sprite);
-
-            this.platforms.push(
-                new Platform(
+        for (let obstacle of this.levelData.obstacles) {
+            this.obstacles.push(
+                new Obstacle(
                     this,
-                    platform.x,
-                    platform.y,
-                    platform.sprite
+                    obstacle.x,
+                    obstacle.y,
+                    obstacle.sprite
                 )
             );
         }
 
         // collider automatically stops them from passing through each other
-        this.physics.add.collider(this.player, this.platforms);
+        this.physics.add.collider(this.player, this.obstacles);
     }
 
     // updates the game

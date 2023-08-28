@@ -3,7 +3,6 @@ const fs = require('fs');
 const http = require('http');
 
 const mime = require('mime');
-//const phaser = require('phaser');
 
 // the directory that the client files are located in
 const CLIENT_DIRECTORY = './client'
@@ -20,12 +19,9 @@ function getFilePath(url) {
     return `${CLIENT_DIRECTORY}${getContentType(url) === 'text/html' ? '/index.html' : url}`
 }
 
-let requestCounter = 0;
 
 // create a listener
 const server = http.createServer((req, res) => {
-    console.log(`Request number ${++requestCounter}: ${req.url}`);
-
     fs.readFile(
         getFilePath(req.url),
         (err, data) => {

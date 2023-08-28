@@ -1,5 +1,8 @@
 import { Level, SceneLoader } from './scenes.js';
 
+console.log(`width: ${window.screen.availWidth}`);
+console.log(`height: ${window.screen.availHeight}`);
+
 const config = {
     type: Phaser.AUTO,
     width: window.innerWidth,
@@ -7,7 +10,7 @@ const config = {
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: { y: 1250 }
+            gravity: { y: 1000 }
         }
     },
     scale: {

@@ -1,8 +1,6 @@
 class CustomImage extends Phaser.Physics.Arcade.Image {
     constructor(scene, x, y, sprite) {
         super(scene, x, y, sprite);
-        
-        //console.log(`Sprite parameter: ${sprite}`);
 
         // add it to the game
         scene.physics.add.existing(this);
@@ -10,15 +8,17 @@ class CustomImage extends Phaser.Physics.Arcade.Image {
     }
 }
 
-class Platform extends CustomImage {
+
+class Obstacle extends CustomImage {
     constructor(scene, x, y, sprite) {
         super(scene, x, y, sprite);
 
-        // platforms can't move or fall
+        // Obstacles can't move or fall
         this.setPushable(false);
         this.setMaxVelocity(0, 0);
     }
 }
+
 
 class Player extends CustomImage {
     constructor(scene, spawnPoint, config) {
@@ -50,4 +50,5 @@ class Player extends CustomImage {
     }
 }
 
-export { Platform, Player }
+
+export { Obstacle, Player }
