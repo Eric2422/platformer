@@ -1,5 +1,5 @@
 {
-    "background": "foreground/obstacles/limestone.png",
+    "background": "background/sky.png",
     "playerSpawnPoint": [
         100,
         400

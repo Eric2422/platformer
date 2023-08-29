@@ -22,6 +22,8 @@ function getFilePath(url) {
 
 // create a listener
 const server = http.createServer((req, res) => {
+    console.log(req.url);
+
     fs.readFile(
         getFilePath(req.url),
         (err, data) => {

@@ -22,12 +22,12 @@ class Level extends Phaser.Scene {
         this.load.json(this.levelURL, this.levelURL);
 
         // when it's complete
-        this.load.on(`filecomplete`, () => {
+        this.load.on(`filecomplete-json-${this.levelURL}`, () => {
             // load the player file
             this.load.json(this.playerURL, this.playerURL);
 
             // once both JSONs are loaded
-            this.load.on(`filecomplete`, () => {
+            this.load.on(`filecomplete-json-${this.playerURL}`, () => {
                 // get the level data
                 this.levelData = this.cache.json.get(this.levelURL);
     
@@ -42,6 +42,9 @@ class Level extends Phaser.Scene {
     
                 // add player sprite to sprites
                 sprites.push(this.playerData.sprite);
+
+                // add the background image to sprites
+                sprites.push(this.levelData.background);
     
                 // add the sprite for each obstacle to sprites
                 this.levelData.obstacles.forEach(
@@ -51,7 +54,9 @@ class Level extends Phaser.Scene {
                         }
                     }
                 ); 
-                    
+                
+                console.log(sprites);
+
                 // load each sprite
                 sprites.forEach(
                     ele => {
@@ -60,6 +65,8 @@ class Level extends Phaser.Scene {
                 );
             });
         });
+
+        console.log(this.textures);
     }
 
     // add elements to game
@@ -69,6 +76,10 @@ class Level extends Phaser.Scene {
         this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+
+        // add the background
+        console.log(this.levelData.background);
+        this.add.image(screen.availWidth / 2, screen.availHeight / 2, this.levelData.background);
 
         // create the player
         this.player = new Player(
