@@ -31,12 +31,12 @@ class Player extends CustomImage {
         this.jumpVelocity = config.jumpVelocity;
 
         // the player's acceleration
-        this.xAcceleration = config.xAcceleration;
+        this.walkAcceleration = config.walkAcceleration;
 
         // the player's max velocity
         // horizontal velocity is limited
         // vertical is not
-        this.setMaxVelocity(config.maxXSpeed, Infinity);
+        this.setMaxVelocity(config.walkSpeed, Infinity);
 
         // the player cannot exceed world boundaries
         this.setCollideWorldBounds(true, 0, 0);

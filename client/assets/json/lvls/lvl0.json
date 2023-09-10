@@ -1,8 +1,7 @@
 {
     "background": "background/sky.png",
-    "playerSpawnPoint": [
-        100,
-        400
+    "decor": [
+        
     ],
     "obstacles": [
         {
@@ -105,6 +104,10 @@
             "y": 450,
             "sprite": "foreground/obstacles/limestone.png"
         }
+    ],
+    "playerSpawnPoint": [
+        100,
+        400
     ],
     "door": {
         "x": 1570,

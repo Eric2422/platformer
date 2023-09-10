@@ -1,7 +1,7 @@
 {
-  "xAcceleration": 7.5,
-  "maxXSpeed": 200,
-  "jumpVelocity": 500,
+  "walkAcceleration": 7.5,
+  "walkSpeed": 200,
+  "jumpVelocity": 450,
   "terminalVelocity": 750,
   "sprite": "player/player.png"
 }

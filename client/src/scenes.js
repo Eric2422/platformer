@@ -54,8 +54,6 @@ class Level extends Phaser.Scene {
                         }
                     }
                 ); 
-                
-                console.log(sprites);
 
                 // load each sprite
                 sprites.forEach(
@@ -65,8 +63,6 @@ class Level extends Phaser.Scene {
                 );
             });
         });
-
-        console.log(this.textures);
     }
 
     // add elements to game
@@ -78,8 +74,8 @@ class Level extends Phaser.Scene {
         this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 
         // add the background
-        console.log(this.levelData.background);
-        this.add.image(screen.availWidth / 2, screen.availHeight / 2, this.levelData.background);
+        console.log(this.sys.game.canvas);
+        this.add.image(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.levelData.background);
 
         // create the player
         this.player = new Player(
@@ -115,18 +111,18 @@ class Level extends Phaser.Scene {
 
         // if w is pressed and the player is on something,
         // jump
-        if (this.keySpace.isDown && this.player.body.touching.down) {
+        if (this.keySpace.isDown && this.player.body.onFloor()) {
             this.player.body.velocity.y -= this.player.jumpVelocity;
 
         }
 
         // move right
         if (this.keyA.isDown) {
-            this.player.body.velocity.x -= this.player.xAcceleration;
+            this.player.body.velocity.x -= this.player.walkAcceleration;
 
             // move right
         } else if (this.keyD.isDown) {
-            this.player.body.velocity.x += this.player.xAcceleration;
+            this.player.body.velocity.x += this.player.walkAcceleration;
         }
     }
 }
