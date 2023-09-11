@@ -1,7 +1,8 @@
-import { Level, SceneLoader } from './scenes.js';
+import { CookieHandler } from './cookies.js';
+import { Area, SceneLoader } from './scenes.js';
 
-console.log(`width: ${window.screen.availWidth}`);
-console.log(`height: ${window.screen.availHeight}`);
+CookieHandler.setCoookie();
+CookieHandler.logCookie();
 
 const config = {
     type: Phaser.AUTO,
@@ -19,7 +20,7 @@ const config = {
         // Center vertically and horizontally
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
-    scene: [SceneLoader, Level]
+    scene: [SceneLoader, Area]
 };
 
 const game = new Phaser.Game(config);

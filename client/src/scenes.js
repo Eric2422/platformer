@@ -1,14 +1,14 @@
 import { Obstacle, Player } from './customGameObjects.js';
 
-class Level extends Phaser.Scene {
+class Area extends Phaser.Scene {
     constructor() {
-        super({ key: 'level' });
+        super({ key: 'area' });
     }
 
     // init can run to replay the scene without creating a new object
     // prepare the data
     init(data) {
-        this.levelURL = data.levelURL;
+        this.areaURL = data.areaURL;
 
         this.playerURL = data.playerURL;
     }
@@ -18,42 +18,42 @@ class Level extends Phaser.Scene {
         // load the JSONs   
         this.load.setBaseURL('./assets/json/');
 
-        // load the level file
-        this.load.json(this.levelURL, this.levelURL);
+        // load the area file
+        this.load.json(this.areaURL, this.areaURL);
 
         // when it's complete
-        this.load.on(`filecomplete-json-${this.levelURL}`, () => {
+        this.load.on(`filecomplete-json-${this.areaURL}`, () => {
             // load the player file
             this.load.json(this.playerURL, this.playerURL);
 
             // once both JSONs are loaded
             this.load.on(`filecomplete-json-${this.playerURL}`, () => {
-                // get the level data
-                this.levelData = this.cache.json.get(this.levelURL);
-    
+                // get the area data
+                this.areaData = this.cache.json.get(this.areaURL);
+
                 // get the player data
                 this.playerData = this.cache.json.get(this.playerURL);
-    
+
                 // load the images
                 this.load.setBaseURL('./assets/sprites/');
-    
+
                 // create a non-repeating list of sprites to load
                 const sprites = [];
-    
+
                 // add player sprite to sprites
                 sprites.push(this.playerData.sprite);
 
                 // add the background image to sprites
-                sprites.push(this.levelData.background);
-    
+                sprites.push(this.areaData.background);
+
                 // add the sprite for each obstacle to sprites
-                this.levelData.obstacles.forEach(
+                this.areaData.obstacles.forEach(
                     ele => {
                         if (!sprites.includes(ele.sprite)) {
                             sprites.push(ele.sprite);
                         }
                     }
-                ); 
+                );
 
                 // load each sprite
                 sprites.forEach(
@@ -74,13 +74,16 @@ class Level extends Phaser.Scene {
         this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 
         // add the background
-        console.log(this.sys.game.canvas);
-        this.add.image(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.levelData.background);
+        this.add.image(
+            this.sys.game.canvas.width / 2,
+            this.sys.game.canvas.height / 2,
+            this.areaData.background
+        );
 
         // create the player
         this.player = new Player(
             this,
-            this.levelData.playerSpawnPoint,
+            this.areaData.playerSpawnPoint,
             this.playerData
         );
 
@@ -88,7 +91,7 @@ class Level extends Phaser.Scene {
         this.obstacles = [];
 
         // create each obstacle in the json
-        for (let obstacle of this.levelData.obstacles) {
+        for (let obstacle of this.areaData.obstacles) {
             this.obstacles.push(
                 new Obstacle(
                     this,
@@ -134,12 +137,12 @@ class SceneLoader extends Phaser.Scene {
 
     create() {
         let data = {
-            levelURL: 'lvls/lvl0.json',
+            areaURL: 'areas/coastalCliff.json',
             playerURL: 'player.json'
         }
 
-        this.scene.start('level', data);
+        this.scene.start('area', data);
     }
 }
 
-export { Level, SceneLoader }
+export { Area, SceneLoader }

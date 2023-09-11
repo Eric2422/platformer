@@ -1,8 +1,6 @@
 {
     "background": "background/sky.png",
-    "decor": [
-        
-    ],
+    "decor": [],
     "obstacles": [
         {
             "x": 32,
