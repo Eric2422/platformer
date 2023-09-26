@@ -9,6 +9,17 @@ class CustomImage extends Phaser.Physics.Arcade.Image {
 }
 
 
+class CustomSprite extends Phaser.Physics.Arcade.Sprite {
+    constructor(scene, x, y, spriteSheet) {
+        super(scene, x, y, spriteSheet);
+
+        // add it to the game
+        scene.physics.add.existing(this);
+        scene.add.existing(this);
+    }
+}
+
+
 class Obstacle extends CustomImage {
     constructor(scene, x, y, sprite) {
         super(scene, x, y, sprite);
@@ -20,7 +31,7 @@ class Obstacle extends CustomImage {
 }
 
 
-class Player extends CustomImage {
+class Player extends CustomSprite {
     constructor(scene, spawnPoint, config) {
         super(scene, 100, 100, config.sprite);
 
