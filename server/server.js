@@ -14,7 +14,8 @@ function getContentType(url) {
 }
 
 
-// returns the filepath of the requested file
+// if the requested file is an HTML, return index.html
+// otherwise, return the file that the URL points to
 function getFilePath(url) {
     return `${CLIENT_DIRECTORY}${getContentType(url) === 'text/html' ? '/index.html' : url}`
 }
