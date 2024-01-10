@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "mime": "^3.0.0",
+    "nodemon": "^3.0.2",
+    "package-lock.json": "^1.0.0",
+    "package.json": "^0.0.0",
+    "phaser": "^3.60.0"
+  },
+  "name": "platformer",
+  "description": "A platformer game made with Phaser",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "platformer"
+  },
+  "author": "Eric Zhang",
+  "license": "ISC"
+}
