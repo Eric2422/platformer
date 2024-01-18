@@ -13,6 +13,14 @@ class Area extends Phaser.Scene {
         this.playerURL = data.playerURL;
     }
 
+    /**
+     * Loads the Player data
+     */
+    loadPlayerData() {
+        // load the player file
+        this.load.json(this.playerURL, this.playerURL);
+    }
+
     // load the necessary assets
     preload() {
         // load the JSONs   
@@ -21,12 +29,11 @@ class Area extends Phaser.Scene {
         // load the area file
         this.load.json(this.areaURL, this.areaURL);
 
-        // when it's complete
+        // when the area file is loaded
         this.load.on(`filecomplete-json-${this.areaURL}`, () => {
-            // load the player file
-            this.load.json(this.playerURL, this.playerURL);
+            this.loadPlayerData();
 
-            // once both JSONs are loaded
+            // once the player JSON is loaded
             this.load.on(`filecomplete-json-${this.playerURL}`, () => {
                 // get the area data
                 this.areaData = this.cache.json.get(this.areaURL);

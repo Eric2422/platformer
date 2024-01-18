@@ -1,3 +1,6 @@
+/**
+ * Super class for static sprites(e.g. obstacles)
+ */
 class CustomImage extends Phaser.Physics.Arcade.Image {
     constructor(scene, x, y, sprite) {
         super(scene, x, y, sprite);
@@ -8,7 +11,9 @@ class CustomImage extends Phaser.Physics.Arcade.Image {
     }
 }
 
-
+/**
+ * A super class for animated sprites(e.g. the player)
+ */
 class CustomSprite extends Phaser.Physics.Arcade.Sprite {
     constructor(scene, x, y, spriteSheet) {
         super(scene, x, y, spriteSheet);
@@ -19,7 +24,9 @@ class CustomSprite extends Phaser.Physics.Arcade.Sprite {
     }
 }
 
-
+/**
+ * Creates obstacles such as rocks
+ */
 class Obstacle extends CustomImage {
     constructor(scene, x, y, sprite) {
         super(scene, x, y, sprite);
@@ -31,6 +38,9 @@ class Obstacle extends CustomImage {
 }
 
 
+/**
+ * Represents the player
+ */
 class Player extends CustomSprite {
     constructor(scene, spawnPoint, config) {
         super(scene, 100, 100, config.sprite);
@@ -44,8 +54,7 @@ class Player extends CustomSprite {
         // the player's acceleration
         this.walkAcceleration = config.walkAcceleration;
 
-        // the player's max velocity
-        // horizontal velocity is limited
+        // the player's max horizontal velocity is limited
         // vertical is not
         this.setMaxVelocity(config.walkSpeed, Infinity);
 
@@ -60,6 +69,5 @@ class Player extends CustomSprite {
         this.setDrag(0.05);
     }
 }
-
 
 export { Obstacle, Player }

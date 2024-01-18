@@ -3,5 +3,5 @@
   "walkSpeed": 200,
   "jumpVelocity": 450,
   "terminalVelocity": 750,
-  "sprite": "player/player.png"
+  "sprite": "player/duck.png"
 }
