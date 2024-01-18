@@ -10,7 +10,9 @@ const CLIENT_DIRECTORY = './client'
 
 // return the content type of the file
 function getContentType(url) {
-    return url == '/' ? 'text/html' : mime.getType(url);
+    // if the url is the root, return a it as a HTML file
+    // otherwise, return what the mime type
+    return url === '/' ? 'text/html' : mime.getType(url);
 }
 
 

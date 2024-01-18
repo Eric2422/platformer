@@ -1,4 +1,4 @@
-import { Obstacle, Player } from './customGameObjects.js';
+import { Obstacle, Player } from './gameObjects.js';
 
 class Area extends Phaser.Scene {
     constructor() {
