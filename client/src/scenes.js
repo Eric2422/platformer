@@ -5,11 +5,17 @@ class Area extends Phaser.Scene {
         super({ key: 'area' });
     }
 
+    /**
+     * Recursively load all the assets
+     */
+    loadAsset() {
+
+    }
+
     // init can run to replay the scene without creating a new object
     // prepare the data
     init(data) {
         this.areaURL = data.areaURL;
-
         this.playerURL = data.playerURL;
     }
 
@@ -37,22 +43,18 @@ class Area extends Phaser.Scene {
                 // load the images
                 this.load.setBaseURL('./assets/sprites/');
 
-                // create a non-repeating list of sprites to load
-                const sprites = [];
+                // create a set of sprites to load
+                const sprites = new Set();
 
                 // add player sprite to sprites
-                sprites.push(this.playerData.sprite);
+                sprites.add(this.playerData.sprite);
 
                 // add the background image to sprites
-                sprites.push(this.areaData.background);
+                sprites.add(this.areaData.background);
 
                 // add the sprite for each obstacle to sprites
                 this.areaData.obstacles.forEach(
-                    ele => {
-                        if (!sprites.includes(ele.sprite)) {
-                            sprites.push(ele.sprite);
-                        }
-                    }
+                    sprites.add(ele.sprite)
                 );
 
                 // load each sprite
@@ -119,7 +121,7 @@ class Area extends Phaser.Scene {
 
         }
 
-        // move right
+        // move left
         if (this.keyA.isDown) {
             this.player.body.velocity.x -= this.player.walkAcceleration;
 

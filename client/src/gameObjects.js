@@ -61,5 +61,4 @@ class Player extends CustomSprite {
     }
 }
 
-
 export { Obstacle, Player }
