@@ -5,13 +5,6 @@ class Area extends Phaser.Scene {
         super({ key: 'area' });
     }
 
-    /**
-     * Recursively load all the assets
-     */
-    loadAsset() {
-
-    }
-
     // init can run to replay the scene without creating a new object
     // prepare the data
     init(data) {
@@ -20,11 +13,44 @@ class Area extends Phaser.Scene {
     }
 
     /**
-     * Loads the Player data
+     * Loads the player.json file
      */
-    loadPlayerData() {
+    loadPlayerJson() {
         // load the player file
         this.load.json(this.playerURL, this.playerURL);
+
+        // once the player JSON is loaded
+        this.load.on(`filecomplete-json-${this.playerURL}`, this.loadAreaJson);
+    }
+
+    loadAreaJson() {
+        // get the area data
+        this.areaData = this.cache.json.get(this.areaURL);
+
+        // get the player data
+        this.playerData = this.cache.json.get(this.playerURL);
+
+        // load the images
+        this.load.setBaseURL('./assets/sprites/');
+
+        // create a set of sprites to load
+        const sprites = new Set();
+
+        // add player sprite to sprites
+        sprites.add(this.playerData.sprite);
+
+        // add the background image to sprites
+        sprites.add(this.areaData.background);
+
+        // add the sprite for each obstacle to sprites
+        this.areaData.obstacles.forEach(
+            sprites.add(ele.sprite)
+        );
+
+        // load each sprite
+        sprites.forEach(
+            ele => { this.load.image(ele, ele) }
+        );
     }
 
     // load the necessary assets
@@ -36,42 +62,7 @@ class Area extends Phaser.Scene {
         this.load.json(this.areaURL, this.areaURL);
 
         // when the area file is loaded
-        this.load.on(`filecomplete-json-${this.areaURL}`, () => {
-            this.loadPlayerData();
-
-            // once the player JSON is loaded
-            this.load.on(`filecomplete-json-${this.playerURL}`, () => {
-                // get the area data
-                this.areaData = this.cache.json.get(this.areaURL);
-
-                // get the player data
-                this.playerData = this.cache.json.get(this.playerURL);
-
-                // load the images
-                this.load.setBaseURL('./assets/sprites/');
-
-                // create a set of sprites to load
-                const sprites = new Set();
-
-                // add player sprite to sprites
-                sprites.add(this.playerData.sprite);
-
-                // add the background image to sprites
-                sprites.add(this.areaData.background);
-
-                // add the sprite for each obstacle to sprites
-                this.areaData.obstacles.forEach(
-                    sprites.add(ele.sprite)
-                );
-
-                // load each sprite
-                sprites.forEach(
-                    ele => {
-                        this.load.image(ele, ele)
-                    }
-                );
-            });
-        });
+        this.load.on(`filecomplete-json-${this.areaURL}`, this.loadPlayerData);
     }
 
     // add elements to game
